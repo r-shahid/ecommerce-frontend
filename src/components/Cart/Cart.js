@@ -1,17 +1,12 @@
 import React from 'react';
-// import './style.css';
-import Products from '../Products/products';
-
-function Home(props) {
-	console.log('props-Home', props);
+import './Cart.css'
+const Cart = (props) => {
+	console.log('props-Cart', props);
 	return (
 		<div>
-			<h1 className='title'>
-				Your next purchase is an impulse click away...
-			</h1>
-			<Products />
+			<h1>Cart</h1> 
 		</div>
 	);
 }
 
-export default Home;
+export default Cart

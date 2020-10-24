@@ -1,4 +1,5 @@
 import React from 'react'
+import './Main.css'
 import Products from '../Products/Products'
 import Product from '../Product/Product'
 import Seller from '../Seller/Seller'
@@ -16,3 +17,4 @@ const Main = (props) => {
     )
 }
 export default Main
+
