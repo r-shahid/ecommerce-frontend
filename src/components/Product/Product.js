@@ -1,6 +1,5 @@
 import React from 'react'
 import './Product.css'
-import Cart from '../Cart/Cart'
 const Product = (props) => {
     return (
         <div>
@@ -24,7 +23,6 @@ const Product = (props) => {
                 <input type= 'text' placeholder= 'Review'></input>
                 <input type= 'submit' value= 'SUBMIT'></input>
             </form>
-            <Cart />
         </div>
     )
 }

@@ -1,0 +1,28 @@
+.cart-content{
+    margin: auto;
+    width: 400px;
+    /* margin: 20px auto; */
+}
+
+.product-info {
+    text-align: right;
+    padding: 0 0 0 100px;
+    background-color: pink;
+}
+
+.each-product img {
+    width: 170px;
+    height: 110px;
+}
+
+.each-product {
+    display: flex;
+    justify-content: space-between;
+    background-color: green;
+    margin: 20px 0;
+}
+
+.cart-content button {
+    padding: 5px 0;
+    width: 400px;
+}
