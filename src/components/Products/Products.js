@@ -4,7 +4,7 @@ import React from 'react'
 const Products = (props) => {
     return (
         <div>
-           <img>product image</img>
+           <img alt="product goes here" />
            <p>product name</p>
         </div>
       

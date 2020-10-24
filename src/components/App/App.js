@@ -13,7 +13,7 @@ import {
   from 'react-router-dom';
 
 import './App.css';
-import Home from './components/home/home';
+import Products from '../Products/Products';
 
 
 function App() {
@@ -22,7 +22,7 @@ return (
 		<div>
 			<main>
 				<Switch>
-					<Route exact path='/' component={Home} />
+					<Route exact path='/' component={Products} />
 				</Switch>
 			</main>
 		</div>
