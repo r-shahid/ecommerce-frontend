@@ -4,30 +4,26 @@ import React, {
  } 
   from 'react';
 
-import { 
-  Switch, 
-  Route, 
+//import { 
+  //Switch, 
+  //Route, 
   // Link, 
   // Redirect
- } 
-  from 'react-router-dom';
-
-import './App.css';
-import Home from './components/home/home';
-
+ //} 
+  //from 'react-router-dom';
+import './App.css'
+import Main from '../Main/Main'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 function App() {
-return (
-	<div className='App'>
-		<div>
-			<main>
-				<Switch>
-					<Route exact path='/' component={Home} />
-				</Switch>
-			</main>
+	return (
+		<div className='App'>
+			<Header />
+			<Main />
+			<Footer />
 		</div>
-	</div>
-);
+	); 
 }
 
 

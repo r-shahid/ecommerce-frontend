@@ -1,10 +1,11 @@
 import React from 'react'
-
+import './Product.css'
+import Cart from '../Cart/Cart'
 const Product = (props) => {
     return (
         <div>
             <div>
-                <img>product image</img>
+                <img src='#' alt='#'/>
             </div>
             <div>
                 <h3>PRODUCT NAME</h3>
@@ -13,7 +14,7 @@ const Product = (props) => {
                 <button>Add to Cart</button>
             </div>
             <div>
-                <h3>REVIEWS</h3>
+                <h2>REVIEWS</h2>
                 <p>Review Text</p>
             </div>
             <form>
@@ -21,8 +22,9 @@ const Product = (props) => {
                 <input type= 'text' placeholder= 'Date'></input>
                 <input type= 'text' placeholder= 'Rating'></input>
                 <input type= 'text' placeholder= 'Review'></input>
-                <input type= 'submit'>SUBMIT</input>
+                <input type= 'submit'></input>
             </form>
+            <Cart />
         </div>
     )
 }
