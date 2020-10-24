@@ -22,7 +22,7 @@ const Product = (props) => {
                 <input type= 'text' placeholder= 'Date'></input>
                 <input type= 'text' placeholder= 'Rating'></input>
                 <input type= 'text' placeholder= 'Review'></input>
-                <input type= 'submit'></input>
+                <input type= 'submit' value= 'SUBMIT'></input>
             </form>
             <Cart />
         </div>
