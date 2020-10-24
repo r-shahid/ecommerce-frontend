@@ -1,3 +1,23 @@
 /* the header has two divs. if we're keeping this header, just style with flexbox space between to separate and within the second div do space around to evenly space them out
 
 not sure whats gonna happen with the bootstrap nav bar though*/
+.header {
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 0 20px;
+}
+
+.page-links {
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+    /* padding: 0 40px; */
+}
+
+.page-links div {
+    padding: 0 20px;
+}
