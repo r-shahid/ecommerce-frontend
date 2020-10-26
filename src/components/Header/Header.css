@@ -2,9 +2,17 @@
 
 not sure whats gonna happen with the bootstrap nav bar though*/
 .header {
-    background-color: red;
+    background-color: pink;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+}
+
+/* sticky class added to nav bar when page scrolls. using w3 schools tutorial Tonimarie sent, not sure where the script goes, maybe would work in index.html */
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .logo {
