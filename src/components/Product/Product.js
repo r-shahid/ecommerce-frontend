@@ -3,6 +3,18 @@ import './Product.css'
 import placeholder from "../images/placeholder.jpg"
 
 const Product = (props) => {
+    const [formData, setFormData] = React.useState('')
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+        props.handleSubmit(formData)
+        //props.history.push('/')
+    }
+    const handleChange = (e) => {
+        console.log('handleChange', formData)
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
+
     return (
         <div>
             <div>
@@ -18,12 +30,36 @@ const Product = (props) => {
                 <h2>REVIEWS</h2>
                 <p>Review Text</p>
             </div>
-            <form>
-                <input type= 'text' placeholder= 'Name'></input> 
-                <input type= 'text' placeholder= 'Date'></input>
-                <input type= 'text' placeholder= 'Rating'></input>
-                <input type= 'text' placeholder= 'Review'></input>
-                <input type= 'submit' value= 'SUBMIT'></input>
+            <form onSubmit= {console.log('submit clicked')}>
+                <input 
+                    type= 'text' 
+                    placeholder='Name'
+                    name= 'name' 
+                    value={formData.name}
+                    onChange={handleChange}
+                /> 
+                <input 
+                    type= 'text' 
+                    placeholder='Date'
+                    name= 'date'
+                    value={formData.date}
+                    onChange={handleChange}
+                />
+                <input 
+                    type= 'text' 
+                    placeholder='Rating'
+                    name= 'rating'
+                    value={formData.rating}
+                    onChange={handleChange}
+                />
+                <input 
+                    type= 'text' 
+                    placeholder='Review'
+                    name= 'review'
+                    value={formData.review}
+                    onChange={handleChange}
+                />
+                <input type= 'submit' value= 'Submit'/>
             </form>
         </div>
     )
