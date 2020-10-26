@@ -10,7 +10,7 @@ const Main = (props) => {
 	return (
 		<Switch>
 			<main>
-				<Route path='/'>
+				<Route exact path='/'>
 					<Products />
 				</Route>
 				<Route path='/products:id'>
