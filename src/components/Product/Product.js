@@ -34,7 +34,7 @@ const Product = (props) => {
                     <p>{formData.review}</p>
                 </div>
             </div>
-            <form onSubmit= {console.log('submit clicked')}>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type= 'text' 
                     placeholder='Name'
