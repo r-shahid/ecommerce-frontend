@@ -14,6 +14,7 @@ import {
 
 import './App.css';
 import Home from './components/home/home';
+import Cart from './components/cart/cart';
 
 
 function App() {
@@ -23,6 +24,12 @@ return (
 			<main>
 				<Switch>
 					<Route exact path='/' component={Home} />
+					<Route
+						path='/cart'
+						render={(data) => (
+							<Cart cart={cart} {...data} handleClick={removeCart} />
+						)}
+					/>
 				</Switch>
 			</main>
 		</div>
