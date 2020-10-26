@@ -1,11 +1,12 @@
 import React from 'react'
 import './Product.css'
+import placeholder from "../images/placeholder.jpg"
 
 const Product = (props) => {
     return (
         <div>
             <div>
-                <img src='' alt='#'/>
+                <img src={placeholder} alt='#'/>
             </div>
             <div>
                 <h3>PRODUCT NAME</h3>
