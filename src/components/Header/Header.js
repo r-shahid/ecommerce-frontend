@@ -1,31 +1,31 @@
 import React from 'react'
 import './Header.css';
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 // import logo -- once the logo is made, we can just put it into the nav bar
 
 const Header = () => {
     return (
         <div className="header">
             <div className="logo">
-                {/* <Link to="/"> */}
+                <Link to="/">
                     <p>LOGO</p>
-                {/* </Link> */}
+                </Link>
             </div>
             <div className="page-links">
                 <div>
-                    {/* <Link to="/about"> */}
+                    <Link to="/about">
                     <p>About</p>
-                    {/* </Link>  */}
+                    </Link> 
                 </div>
                 <div>
-                    {/* <Link to="/about"> */}
+                    <Link to="/cart">
                     <p>Cart</p>
-                    {/* </Link>  */}
+                    </Link> 
                 </div>
                 <div>
-                    {/* <Link to="/about"> */}
+                    <Link to="/sell">
                     <p>Sell</p>
-                    {/* </Link>  */}
+                    </Link> 
                 </div>
             </div>
         </div>
