@@ -9,7 +9,7 @@ const Seller = (props) => {
         props.history.push('/')
     }
     const handleChange = (e) => {
-        console.log('handleChange', handleChange)
+        console.log('handleChange', formData)
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
     return (

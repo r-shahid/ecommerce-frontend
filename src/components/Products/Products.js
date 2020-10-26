@@ -5,7 +5,7 @@ import './Products.css'
 const Products = (props) => {
     return (
         <div>
-            <img src='#' alt='#'/>
+            <img src='' alt='#'/>
             <p>product name</p>
         </div>
       
