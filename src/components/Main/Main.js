@@ -5,15 +5,25 @@ import Product from '../Product/Product'
 import Seller from '../Seller/Seller'
 import AboutUs from '../AboutUs/AboutUs'
 import Cart from '../Cart/Cart'
+import { Router, Switch, Route, Link } from 'react-router-dom'
 const Main = (props) => {
     return (
-        <main>
-            <Products />
-            <Product />
-            <Seller />
-            <Cart />
-            <AboutUs />
-        </main>
+        <Switch>
+            <main>
+                <Route path='/products'>
+                    <Products />
+                </Route>
+                <Route path='/products:id'>
+                    <Product />
+                </Route>
+                
+                <Seller />
+                <Cart />
+                <AboutUs />
+            </main>
+        </Switch>
+            
+        
        
     )
 }
