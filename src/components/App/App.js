@@ -15,14 +15,12 @@ import './App.css'
 import Main from '../Main/Main'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import AboutUs from '../AboutUs/AboutUs';
 
 function App() {
 	return (
 		<div className='App'>
 			<Header />
-			{/* <Main /> */}
-      <AboutUs />
+			<Main />
 			<Footer />
 		</div>
 	); 
