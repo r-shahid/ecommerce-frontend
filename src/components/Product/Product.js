@@ -8,10 +8,11 @@ const Product = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
         props.handleSubmit(formData)
-        //props.history.push('/')
+        props.history.push('/')
     }
     const handleChange = (e) => {
         console.log('handleChange', formData)
+        e.preventDefault()
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
@@ -28,7 +29,10 @@ const Product = (props) => {
             </div>
             <div>
                 <h2>REVIEWS</h2>
-                <p>Review Text</p>
+                <div>
+                    <p>{formData.name} <span>{formData.date}</span> {formData.rating}</p>
+                    <p>{formData.review}</p>
+                </div>
             </div>
             <form onSubmit= {console.log('submit clicked')}>
                 <input 
