@@ -3,12 +3,12 @@ import './Product.css'
 import placeholder from "../images/placeholder.jpg"
 
 const Product = (props) => {
-    const [formData, setFormData] = React.useState('')
+    const [formData, setFormData] = React.useState(props.review)
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
         props.handleSubmit(formData)
-        props.history.push('/')
+        props.history.push('/products:id')
     }
     const handleChange = (e) => {
         console.log('handleChange', formData)

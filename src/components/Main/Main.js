@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.css';
 import Products from '../Products/Products';
 import Product from '../Product/Product';
@@ -7,6 +7,13 @@ import AboutUs from '../AboutUs/AboutUs';
 import Cart from '../Cart/Cart';
 import { Router, Switch, Route, Link } from 'react-router-dom';
 const Main = (props) => {
+	const [products, setProducts] = useState([])
+	const emptyReview = {
+		name: '',
+		date: '',
+		rating: 0, 
+		review: ''
+	}
 	return (
 		<Switch>
 			<main>
@@ -14,7 +21,9 @@ const Main = (props) => {
 					<Products />
 				</Route>
 				<Route path='/products:id'>
-					<Product />
+					<Product 
+						review={emptyReview}
+					/>
 				</Route>
 				<Route path='/sell'>
 					<Seller />
