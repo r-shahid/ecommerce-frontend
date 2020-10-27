@@ -14,17 +14,24 @@ const Main = (props) => {
 		rating: 0, 
 		review: ''
 	}
+	const handleUpdate = (review) => {
+		console.log('handleUpdate', handleUpdate)
+	}
 	return (
 		<Switch>
 			<main>
 				<Route exact path='/'>
 					<Products />
 				</Route>
-				<Route path='/products:id'>
-					<Product 
-						review={emptyReview}
-					/>
-				</Route>
+				<Route path='/products:id'
+						render={(rp) => (
+							<Product
+								{...rp}
+								handleSubmit={handleUpdate}
+								review={emptyReview}
+							/>
+						)}
+				/>
 				<Route path='/sell'>
 					<Seller />
 				</Route>
