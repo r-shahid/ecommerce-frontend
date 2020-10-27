@@ -31,8 +31,8 @@ const Main = (props) => {
 		console.log('handleCreate', handleCreate)
 	}
 	return (
-		<Switch>
-			<main>
+		<main>
+			<Switch>
 				<Route exact path='/'>
 					<Products />
 				</Route>
@@ -63,8 +63,8 @@ const Main = (props) => {
 				<Route path='/about'>
 					<AboutUs />
 				</Route>
-			</main>
-		</Switch>
+			</Switch>
+		</main>	
 	);
 };
 export default Main;
