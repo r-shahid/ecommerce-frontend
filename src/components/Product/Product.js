@@ -3,15 +3,16 @@ import './Product.css'
 import placeholder from "../images/placeholder.jpg"
 
 const Product = (props) => {
-    const [formData, setFormData] = React.useState('')
+    const [formData, setFormData] = React.useState(props.review)
 
 	const handleSubmit = (e) => {
-		e.preventDefault()
+	    e.preventDefault()
         props.handleSubmit(formData)
-        //props.history.push('/')
+        props.history.push('/products:id')
     }
     const handleChange = (e) => {
         console.log('handleChange', formData)
+        e.preventDefault()
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
@@ -28,9 +29,12 @@ const Product = (props) => {
             </div>
             <div>
                 <h2>REVIEWS</h2>
-                <p>Review Text</p>
+                <div>
+                    <p>{formData.name} <span>{formData.date}</span> {formData.rating}</p>
+                    <p>{formData.review}</p>
+                </div>
             </div>
-            <form onSubmit= {console.log('submit clicked')}>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type= 'text' 
                     placeholder='Name'
