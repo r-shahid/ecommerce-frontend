@@ -2,27 +2,27 @@ import React from 'react'
 import './Seller.css'
 const Seller = (props) => {
     console.log('seller-props', props)
-    const [formData, setFormData] = 
-    React.useState({
-        name: '',
-        img: '',
-        price: 0,
-        description: ''
-    })
+     const [formData, setFormData] = 
+     React.useState({
+         name: '',
+         img: '',
+         price: 0,
+         description: ''
+     })
 
-	const handleSubmit = (e) => {
-		e.preventDefault()
-        props.handleSubmit(formData)
-        props.history.push('/')
-    }
-    const handleChange = (e) => {
-        console.log('handleChange', formData)
-        setFormData({ ...formData, [e.target.name]: e.target.value })
+	//  const handleSubmit = (e) => {
+	//  	e.preventDefault()
+    //      props.handleSubmit(formData)
+    //      props.history.push('/')
+    //  }
+     const handleChange = (e) => {
+         console.log('handleChange', formData)
+         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
     return (
         <div>
             <h2>SELL ON IMPULSE</h2>
-            <form onSubmit= {handleSubmit}>
+            <form onSubmit= {props.handleSubmit}>
                 <input 
                     type= 'text' 
                     placeholder='ITEM NAME'
