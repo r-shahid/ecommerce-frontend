@@ -8,14 +8,27 @@ import Cart from '../Cart/Cart';
 import { Router, Switch, Route, Link } from 'react-router-dom';
 const Main = (props) => {
 	const [products, setProducts] = useState([])
+	
 	const emptyReview = {
 		name: '',
 		date: '',
 		rating: 0, 
 		review: ''
 	}
+	const emptyProduct = {
+		product: '',
+		img: '',
+		price: 0,
+		productDescription: '',
+		review: [
+			{emptyReview}
+		],
+	}
 	const handleUpdate = (review) => {
 		console.log('handleUpdate', handleUpdate)
+	}
+	const handleCreate = (product) => {
+		console.log('handleCreate', handleCreate)
 	}
 	return (
 		<Switch>
@@ -23,20 +36,29 @@ const Main = (props) => {
 				<Route exact path='/'>
 					<Products />
 				</Route>
-				<Route path='/products:id'
-						render={(rp) => (
-							<Product
-								{...rp}
-								handleSubmit={handleUpdate}
-								review={emptyReview}
-							/>
-						)}
+				<Route 
+					path='/products:id'
+					render={(rp) => (
+						<Product
+							{...rp}
+							handleSubmit={handleUpdate}
+							review={emptyReview}
+						/>
+					)}
 				/>
-				<Route path='/sell'>
-					<Seller />
-				</Route>
-				<Route path='/cart'>
-					<Cart />
+				<Route 
+					path='/sell'
+					render={(rp) => (
+						<Seller 
+							{...rp}
+							product={emptyProduct}
+							handleSubmit={handleCreate}	
+						/>
+					)}	
+				/>
+				<Route 
+					path='/cart'>
+						<Cart />
 				</Route>
 				<Route path='/about'>
 					<AboutUs />
