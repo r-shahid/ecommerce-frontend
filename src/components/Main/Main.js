@@ -5,11 +5,11 @@ import Product from '../Product/Product';
 import Seller from '../Seller/Seller';
 import AboutUs from '../AboutUs/AboutUs';
 import Cart from '../Cart/Cart';
-import { Router, Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 const Main = (props) => {
 	return (
-		<Switch>
-			<main>
+		<main>
+			<Switch>
 				<Route exact path='/'>
 					<Products />
 				</Route>
@@ -25,8 +25,8 @@ const Main = (props) => {
 				<Route path='/about'>
 					<AboutUs />
 				</Route>
-			</main>
-		</Switch>
+			</Switch>
+		</main>
 	);
 };
 export default Main;
