@@ -4,7 +4,7 @@ const Seller = (props) => {
     const [formData, setFormData] = React.useState('')
 
 	const handleSubmit = (e) => {
-		e.preventDefault()
+		//e.preventDefault()
         handleSubmit(formData)
         props.history.push('/')
     }
