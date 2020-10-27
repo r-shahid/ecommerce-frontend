@@ -1,7 +1,13 @@
 import React from 'react'
 import './Seller.css'
 const Seller = (props) => {
-    const [formData, setFormData] = React.useState('')
+    const [formData, setFormData] = 
+    React.useState({
+        name: '',
+        img: '',
+        price: 0,
+        description: ''
+    })
 
 	const handleSubmit = (e) => {
 		//e.preventDefault()
