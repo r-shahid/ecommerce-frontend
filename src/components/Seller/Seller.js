@@ -1,6 +1,7 @@
 import React from 'react'
 import './Seller.css'
 const Seller = (props) => {
+    console.log('seller-props', props)
     const [formData, setFormData] = 
     React.useState({
         name: '',
@@ -10,13 +11,12 @@ const Seller = (props) => {
     })
 
 	const handleSubmit = (e) => {
-		//e.preventDefault()
-        handleSubmit(formData)
+		e.preventDefault()
+        props.handleSubmit(formData)
         props.history.push('/')
     }
     const handleChange = (e) => {
         console.log('handleChange', formData)
-        e.preventDefault()
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
     return (
