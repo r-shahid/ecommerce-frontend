@@ -6,7 +6,7 @@ const Product = (props) => {
     const [formData, setFormData] = React.useState(props.review)
 
 	const handleSubmit = (e) => {
-		e.preventDefault()
+	    e.preventDefault()
         props.handleSubmit(formData)
         props.history.push('/products:id')
     }
