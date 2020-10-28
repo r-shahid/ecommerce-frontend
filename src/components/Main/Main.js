@@ -12,23 +12,6 @@ import { Switch, Route } from 'react-router-dom';
 const Main = (props) => {
 	//url variable
 	const url = 'https://impulse-p3.herokuapp.com';
-	//state to hold products
-	const [products, setProducts] = useState([]);
-	//function to fetch all products
-	const getProducts = () => {
-		fetch(url + '/products/')
-			.then((response) => response.json())
-			.then((data) => {
-				setProducts(data);
-				console.log('this is data-', data)
-			});
-			
-	};
-	//get products on page load, without creating an infinite loop
-	React.useEffect(() => {
-		getProducts();
-	}, []);
-
 	const emptyReview = {
 		name: '',
 		date: '',
@@ -42,6 +25,32 @@ const Main = (props) => {
 		productDescription: '',
 		review: [{ emptyReview }],
 	};
+	//state to hold products
+	const [products, setProducts] = useState([]);
+	const [product, setProduct] = useState(emptyProduct)
+	//function to fetch all products
+	const getProducts = () => {
+		fetch(url + '/products/')
+			.then((response) => response.json())
+			.then((data) => {
+				setProducts(data);
+				console.log('this is data-', data)
+			});	
+	};
+	//get products on page load, without creating an infinite loop
+	React.useEffect(() => {
+		getProducts();
+	}, []);
+	
+	const getProduct = () => {
+		fetch(url + '/products/id')
+			.then((response) => response.json())
+			.then((data) => {
+				setProduct(data)
+			})
+	} 
+	
+	
 	const handleCreate = (newProduct) => {
 		fetch(url + '/products/', {
 			method: 'post',
@@ -71,9 +80,9 @@ const Main = (props) => {
 					<Products products={products} />
 				</Route>
 				<Route
-					path='/products:id'
+					path='/products/id'
 					render={(rp) => (
-						<Product {...rp} handleSubmit={handleUpdate} products={products} review={emptyReview} />
+						<Product {...rp} handleSubmit={handleUpdate} products={products} review={emptyReview} getProduct={()=>getProduct()}/>
 					)}
 				/>
 				<Route

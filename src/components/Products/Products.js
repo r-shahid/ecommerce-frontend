@@ -7,8 +7,8 @@ const Products = (props) => {
     const {products} = props
     const loaded = () => (
         <div>
-              {products.map((ele, ind) => (
-                  <Link key={ind} to= {`/products/${products[ind]._id}`}>
+            {products.map((ele, ind) => (
+                <Link key={ind} to= {`/products/${products[ind]._id}`}>
                     <div>
                         <img src={products[ind].img} alt={products[ind].product}/>
                         <p>{products[ind].product}</p>
