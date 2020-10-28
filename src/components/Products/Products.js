@@ -6,7 +6,7 @@ const Products = (props) => {
     console.log('Products props- ', props)
     const {products} = props
     const loaded = () => (
-        <div>
+        <div className="all-products">
               {products.map((ele, ind) => (
                   <Link key={ind} to= {`/products/${products[ind]._id}`}>
                     <div>
