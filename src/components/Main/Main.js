@@ -5,7 +5,7 @@ import Product from '../Product/Product';
 import Seller from '../Seller/Seller';
 import AboutUs from '../AboutUs/AboutUs';
 import Cart from '../Cart/Cart';
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 const Main = (props) => {
 	//url variable
 	const url = 'https://impulse-p3.herokuapp.com';
@@ -17,7 +17,9 @@ const Main = (props) => {
 			.then((response) => response.json())
 			.then((data) => {
 				setProducts(data);
+				console.log('this is data-', data)
 			});
+			
 	};
 	//get products on page load, without creating an infinite loop
 	React.useEffect(() => {
