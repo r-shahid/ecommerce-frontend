@@ -5,6 +5,7 @@ not sure whats gonna happen with the bootstrap nav bar though*/
     background-color: red;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0px;
 }
 
 .logo {
