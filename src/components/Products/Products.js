@@ -1,18 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Products.css'
-import placeholder from "../images/placeholder.jpg"
-//this page should have a map that creates multiple cards(maybe)?? 
-//which contain product images and names 
+
 const Products = (props) => {
     console.log('Products props- ', props)
     const {products} = props
     const loaded = () => (
         <div>
               {products.map((ele, ind) => (
-                <div>
-                    <img src={products[ind].img} alt='#'/>
-                    <p>{products[ind].product}</p>
-                </div>  
+                  <Link key={ind} to= {`/products/${products[ind]._id}`}>
+                    <div>
+                        <img src={products[ind].img} alt={products[ind].product}/>
+                        <p>{products[ind].product}</p>
+                    </div>  
+                </Link>
             ))}
         </div>  
     )
