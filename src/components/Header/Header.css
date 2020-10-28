@@ -2,23 +2,38 @@
 
 not sure whats gonna happen with the bootstrap nav bar though*/
 .header {
-    background-color: red;
+    background-color: var(--purple);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 0px;
 }
 
 .logo {
-    padding: 0 20px;
+    padding: 5px 0 0 5px;
+    margin: 0px;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .page-links {
     display: flex;
     justify-content: space-around;
-    background-color: yellow;
-    /* padding: 0 40px; */
+    background-color: var(--purple);
 }
 
 .page-links div {
-    padding: 0 20px;
+    padding: 0px;
+    margin: 0px 10px;
+    background-color: var(--purple);
+}
+
+.page-links a {
+    color: var(--whiteish);
+    text-decoration: none;
+    font-family: 'Karla', sans-serif;
+    font-size: 18px;
+    line-height: 10px;
 }

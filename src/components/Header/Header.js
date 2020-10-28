@@ -1,6 +1,7 @@
 import React from 'react'
 import './Header.css';
 import {Link} from 'react-router-dom'
+import logo from '../images/impulse_logo.png'
 // import logo -- once the logo is made, we can just put it into the nav bar
 
 const Header = () => {
@@ -8,7 +9,8 @@ const Header = () => {
         <div className="header">
             <div className="logo">
                 <Link to="/">
-                    <p>LOGO</p>
+                    {/* <p>LOGO</p> */}
+                    <img src={logo} alt="logo" />
                 </Link>
             </div>
             <div className="page-links">
