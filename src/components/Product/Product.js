@@ -1,10 +1,13 @@
 import React from 'react'
 import './Product.css'
-import placeholder from "../images/placeholder.jpg"
+
 
 const Product = (props) => {
+    console.log('product props- ', props)
     const [formData, setFormData] = React.useState(props.review)
+    const product = props.products.filter(product => product.id === props.match.params.id)
 
+    console.log('result of product filter - ', product)
 	const handleSubmit = (e) => {
 	    e.preventDefault()
         props.handleSubmit(formData)
@@ -19,12 +22,12 @@ const Product = (props) => {
     return (
         <div>
             <div>
-                <img src={placeholder} alt='#'/>
+                <img src={product.img} alt='#'/>
             </div>
             <div>
-                <h3>PRODUCT NAME</h3>
-                <h4>Cost</h4>
-                <p>Product Description</p>
+                <h3>{product.product}</h3>
+                <h4>{props.products.price}</h4>
+                <p>{props.products.productDescription}</p>
                 <button>Add to Cart</button>
             </div>
             <div>

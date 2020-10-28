@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './Products.css'
 
 const Products = (props) => {
-    console.log('Products props- ', props)
+    // console.log('Products props- ', props)
     const {products} = props
     const loaded = () => (
         <div>

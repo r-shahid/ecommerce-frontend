@@ -6,6 +6,9 @@ import Seller from '../Seller/Seller';
 import AboutUs from '../AboutUs/AboutUs';
 import Cart from '../Cart/Cart';
 import { Switch, Route } from 'react-router-dom';
+
+//need a route to display one product by id
+
 const Main = (props) => {
 	//url variable
 	const url = 'https://impulse-p3.herokuapp.com';
@@ -70,7 +73,7 @@ const Main = (props) => {
 				<Route
 					path='/products:id'
 					render={(rp) => (
-						<Product {...rp} handleSubmit={handleUpdate} review={emptyReview} />
+						<Product {...rp} handleSubmit={handleUpdate} products={products} review={emptyReview} />
 					)}
 				/>
 				<Route
