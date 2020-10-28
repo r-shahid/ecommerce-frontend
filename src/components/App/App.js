@@ -15,12 +15,12 @@ import './App.css'
 import Main from '../Main/Main'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import HeroImage from '../HeroImage/HeroImage';
+// import HeroImage from '../HeroImage/HeroImage';
 function App() {
 	return (
 		<div className='App'>
 			<Header />
-      <HeroImage /> 
+      {/* <HeroImage />  */}
 			<Main />
 			<Footer />
 		</div>
