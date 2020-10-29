@@ -52,6 +52,7 @@ const Product = (props) => {
 						<p className='review'>{formData.review}</p>
 					</div>
 				</div>
+                <h4>Write a Review</h4>
 				<form onSubmit={handleSubmit}>
 					<input
 						type='text'
@@ -60,14 +61,16 @@ const Product = (props) => {
 						value={formData.name}
 						onChange={handleChange}
 					/>
+					<br />
 					<input
-						type='text'
+						type='date'
 						placeholder='Date'
 						name='date'
 						value={formData.date}
 						onChange={handleChange}
 					/>
-                    <label for='rating'>Rating</label>
+					<br />
+					<label for='rating'>Rating:</label>
 					<select name='rating' value={formData.rating} onChange={handleChange}>
 						<option>1</option>
 						<option>2</option>
@@ -75,15 +78,16 @@ const Product = (props) => {
 						<option>4</option>
 						<option>5</option>
 					</select>
-
-					<input
+					<br />
+					<textarea
+                        rows='5'
 						type='text'
 						placeholder='Review'
 						name='review'
 						value={formData.review}
 						onChange={handleChange}
 					/>
-					<input type='submit' value='Submit' />
+					<input className='submit' type='submit' value='Submit' />
 				</form>
 			</div>
 		</div>

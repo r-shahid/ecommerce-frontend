@@ -1,6 +1,10 @@
 .product {
     font-family: 'Karla', sans-serif;
 }
+
+.product  img {
+    width: 100%;
+}
  
 .product .product-info h3 {
     font-size: 30px; 
@@ -18,13 +22,24 @@
 .product .product-info button {
     padding: 5px 40px;
     font-family: 'Karla', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    background-color: var(--light-purple);
+    border: none;
+    color:white;
+    cursor: pointer;
+}
+
+.product .product-info button:hover{
+    background-color: var(--green);
 }
 
 .reviews {
     text-align: left;
     padding: 0 20px 20px 20px;
+    margin-bottom: 20px;
 }
+
+/* want to add a border box around each review; will style this once the reviews get mapped from the reviews DB correctly */
 
 .reviews .each-review .name{
     font-size: 20px;
@@ -43,4 +58,38 @@
 
 .reviews .each-review .review{
     font-size: 16px;
+}
+
+.reviews h4 {
+    margin-bottom: 10px;
+}
+
+.reviews form input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.reviews form label {
+    margin-right: 20px;
+}
+
+.reviews form select {
+    width: 388px;
+}
+
+.reviews .submit {
+    width: 100px;
+    padding: 5px 20px;
+    font-size: 16px;
+    /* we dont usually use float but this is the easiest way to get the button on the right without using flexbox on the whole form */
+    float: right;
+    cursor: pointer;
+    border: none;
+    background-color: var(--light-purple);
+    color: white;
+}
+
+.reviews .submit:hover{
+    background-color: var(--green);
 }
