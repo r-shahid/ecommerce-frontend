@@ -4,7 +4,7 @@ import './Product.css';
 
 const Product = (props) => {
 	console.log('product props- ', props);
-	const [formData, setFormData] = useState(props.review);
+	const [formData, setFormData] = useState(props.selectedProduct);
 	const [product, setProduct] = useState({})
 	//something is not quite right here, the filter is showing all products
 	//not just the one that was clicked
@@ -26,11 +26,24 @@ const Product = (props) => {
 		//also should this update the item in the database?
 		props.history.push('/products/:id');
 	};
+
 	const handleChange = (e) => {
 		console.log('handleChange', formData);
-		e.preventDefault();
+		// e.preventDefault();
 		setFormData({ ...formData, [e.target.name]: e.target.value });
+		console.log("setformdata", formData)
 	};
+
+	// // useEffect(() => {
+	// 	console.log("props.products", props.products)
+	// 	const review = props.products.map(
+	// 		(ele, ind) => {
+
+	// 		}
+	// 	);
+	// 	console.log('result of product filter - ', item);
+	// 	setProduct(item[0])
+	// // }, [])
 	//nothing is actually being rendered here except a broken image link
 	//I suspect it has something to do with the filter not outputting just one
 	//product or maybe I've referenced it incorrectly here
@@ -52,15 +65,30 @@ const Product = (props) => {
 			<div className='reviews'>
 				<div>
 					<h2>REVIEWS</h2>
-					<div className='each-review'>
-						<p className='name'>{formData.name}</p>
-						<p className='date'>{formData.date}</p>
-						<p className='rating'>{formData.rating}</p>
-						<p className='review'>{formData.review}</p>
-					</div>
+					{props.products.map((ele, ind) => (
+						console.log("ele", ele.reviews),
+						<>
+						{ele.reviews.filter(
+							(product) => product._id === props.match.params.id
+						),
+						console.log("products", product.reviews)
+						}
+							<p>{product.toString()}</p>
+						</>
+						// <div className='each-review'>
+						// 	<p className='name'>{formData.name}</p>
+						// 	<p className='date'>{formData.date}</p>
+						// 	<p className='rating'>{formData.rating}</p>
+						// 	<p className='review'>{formData.review}</p>
+						// </div>
+					))}
 				</div>
                 <h4>Write a Review</h4>
-				<form onSubmit={handleSubmit}>
+				<form onClick={() => {
+					props.selectProduct(product)
+					props.history.push('/products/:id')
+				}}
+				onSubmit={handleSubmit}>
 					<input
 						type='text'
 						placeholder='Name'
