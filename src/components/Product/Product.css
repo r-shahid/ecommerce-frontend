@@ -1,0 +1,26 @@
+.product {
+    font-family: 'Karla', sans-serif;
+}
+ 
+.product .product-info h3 {
+    font-size: 30px; 
+    margin: 0px;
+}
+.product .product-info h4 {
+    font-size: 20px; 
+    margin: 0px;
+}
+.product .product-info p {
+    font-size: 16px; 
+    padding: 10px;
+    margin: 0px;
+}
+.product .product-info button {
+    padding: 5px 40px;
+    font-family: 'Karla', sans-serif;
+    font-size: 14px;
+}
+
+.reviews {
+    text-align: left;
+}
