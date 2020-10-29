@@ -37,6 +37,7 @@ const Product = (props) => {
                 <h3>{props.products.product}</h3>
                 <h4>{props.products.price}</h4>
                 <p>{props.products.productDescription}</p>
+                {/* this button will need a Link or a handler to pass item to cart */}
                 <button>Add to Cart</button>
             </div>
             <div>
