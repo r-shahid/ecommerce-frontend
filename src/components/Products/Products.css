@@ -4,6 +4,7 @@
     width: 100%;
 }
 .all-products {
+    font-family: 'Karla', sans-serif;
     margin: auto;
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) )
@@ -11,4 +12,9 @@
 
 .all-products div {
     padding: 20px;
+}
+
+.all-products a {
+    text-decoration: none;
+    font-size: 18px;
 }

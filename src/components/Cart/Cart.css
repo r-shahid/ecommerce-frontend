@@ -1,7 +1,7 @@
 .cart-content{
     margin: auto;
     width: 400px;
-    /* margin: 20px auto; */
+    margin-bottom: 20px;
 }
 
 .cart-content .product-info {
