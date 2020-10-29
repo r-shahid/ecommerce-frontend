@@ -5,7 +5,7 @@ import './Product.css'
 const Product = (props) => {
     console.log('product props- ', props)
     const [formData, setFormData] = React.useState(props.review)
-    const product = props.products.filter(product => product.name === props.match.params.name)[0]
+    const product = props.products.filter(product => product.name === props.match.params.name)
 
     console.log('result of product filter - ', product)
 	const handleSubmit = (e) => {
@@ -22,10 +22,10 @@ const Product = (props) => {
     return (
         <div>
             <div>
-                <img src={product.img} alt='#'/>
+                <img src={props.products.img} alt='#'/>
             </div>
             <div>
-                <h3>{product.product}</h3>
+                <h3>{props.products.product}</h3>
                 <h4>{props.products.price}</h4>
                 <p>{props.products.productDescription}</p>
                 <button>Add to Cart</button>
