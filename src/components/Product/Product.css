@@ -93,3 +93,14 @@
 .reviews .submit:hover{
     background-color: var(--green);
 }
+
+@media screen and (min-width: 768px){
+    .reviews form select {
+        width: 675px;
+    }
+
+    .product-desc{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

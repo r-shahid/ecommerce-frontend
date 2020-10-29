@@ -31,16 +31,19 @@ const Product = (props) => {
 	//I'm kind of lost
 	return (
 		<div className='product'>
-			<div>
-				<img src={props.products.img} alt='#' />
+			<div className='product-desc'>
+				<div>
+					<img src={props.products.img} alt='#' />
+				</div>
+				<div className='product-info'>
+					<h3>{props.products.product}</h3>
+					<h4>{props.products.price}</h4>
+					<p>{props.products.productDescription}</p>
+					{/* this button will need a Link or a handler to pass item to cart */}
+					<button>Add to Cart</button>
+				</div>
 			</div>
-			<div className='product-info'>
-				<h3>{props.products.product}</h3>
-				<h4>{props.products.price}</h4>
-				<p>{props.products.productDescription}</p>
-				{/* this button will need a Link or a handler to pass item to cart */}
-				<button>Add to Cart</button>
-			</div>
+			
 			<hr />
 			<div className='reviews'>
 				<div>
