@@ -67,11 +67,17 @@ const Main = (props) => {
 	return (
 		<main>
 			<Switch>
-				<Route exact path='/'>
-					<Products products={products} />
-				</Route>
+				<Route 
+					exact 
+					path='/'
+					render={props => <Products 
+					{...props} products={products} 
+					/>}
+				/>
+					
+				
 				<Route
-					path='/products:id'
+					path='/products/:id'
 					render={(rp) => (
 						<Product {...rp} handleSubmit={handleUpdate} products={products} review={emptyReview} />
 					)}
