@@ -1,0 +1,7 @@
+.footer {
+    background-color: var(--light-purple);
+    padding: 15px;
+    font-family: 'Karla', sans-serif;
+    color: var(--green);
+    font-weight: bold;
+}
