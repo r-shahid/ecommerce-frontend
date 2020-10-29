@@ -32,7 +32,7 @@ const Main = (props) => {
 	const emptyReview = {
 		name: '',
 		date: '',
-		rating: 0,
+		rating: null,
 		review: '',
 	};
 	const emptyProduct = {

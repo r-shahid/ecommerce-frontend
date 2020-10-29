@@ -52,13 +52,14 @@ const Product = (props) => {
 			<div className='reviews'>
 				<div>
 					<h2>REVIEWS</h2>
-					<div>
-						<p>
-							{formData.name} <span>{formData.date}</span> {formData.rating}
-						</p>
-						<p>{formData.review}</p>
+					<div className='each-review'>
+						<p className='name'>{formData.name}</p>
+						<p className='date'>{formData.date}</p>
+						<p className='rating'>{formData.rating}</p>
+						<p className='review'>{formData.review}</p>
 					</div>
 				</div>
+                <h4>Write a Review</h4>
 				<form onSubmit={handleSubmit}>
 					<input
 						type='text'
@@ -67,28 +68,33 @@ const Product = (props) => {
 						value={formData.name}
 						onChange={handleChange}
 					/>
+					<br />
 					<input
-						type='text'
+						type='date'
 						placeholder='Date'
 						name='date'
 						value={formData.date}
 						onChange={handleChange}
 					/>
-					<input
-						type='text'
-						placeholder='Rating'
-						name='rating'
-						value={formData.rating}
-						onChange={handleChange}
-					/>
-					<input
+					<br />
+					<label for='rating'>Rating:</label>
+					<select name='rating' value={formData.rating} onChange={handleChange}>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+					<br />
+					<textarea
+                        rows='5'
 						type='text'
 						placeholder='Review'
 						name='review'
 						value={formData.review}
 						onChange={handleChange}
 					/>
-					<input type='submit' value='Submit' />
+					<input className='submit' type='submit' value='Submit' />
 				</form>
 			</div>
 		</div>

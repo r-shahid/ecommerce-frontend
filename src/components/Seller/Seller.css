@@ -1,0 +1,43 @@
+.seller{
+    font-family: 'Karla', sans-serif;
+}
+
+.seller img {
+    width: 100%;
+}
+
+.seller h2 {
+    font-size: 30px;
+    color: var(--green);
+}
+
+.seller form {
+    margin: 20px;
+}
+
+.seller form input {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+.seller .submit {
+    width: 100px;
+    padding: 5px 20px;
+    font-size: 16px;
+    float: right;
+    cursor: pointer;
+    border: none;
+    background-color: var(--light-purple);
+    color: white;
+}
+
+.seller .submit:hover{
+    background-color: var(--green);
+}
+
+.seller .terms-conditions {
+    font-size: 10px;
+    text-align: left;
+    padding: 0 20px;
+}
