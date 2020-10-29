@@ -5,7 +5,7 @@ import './Product.css'
 const Product = (props) => {
     console.log('product props- ', props)
     const [formData, setFormData] = React.useState(props.review)
-    const product = props.products.filter(product => product.id === props.match.params.id)
+    const product = props.products.filter(product => product.name === props.match.params.name)[0]
 
     console.log('result of product filter - ', product)
 	const handleSubmit = (e) => {
