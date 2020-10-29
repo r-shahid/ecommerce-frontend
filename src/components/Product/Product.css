@@ -23,4 +23,24 @@
 
 .reviews {
     text-align: left;
+    padding: 0 20px 20px 20px;
+}
+
+.reviews .each-review .name{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.reviews .each-review .date{
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+.reviews .each-review .rating{
+    font-size: 18px;
+}
+
+.reviews .each-review .review{
+    font-size: 16px;
 }

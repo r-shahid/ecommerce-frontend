@@ -45,11 +45,11 @@ const Product = (props) => {
 			<div className='reviews'>
 				<div>
 					<h2>REVIEWS</h2>
-					<div>
-						<p>
-							{formData.name} <span>{formData.date}</span> {formData.rating}
-						</p>
-						<p>{formData.review}</p>
+					<div className='each-review'>
+						<p className='name'>{formData.name}</p>
+						<p className='date'>{formData.date}</p>
+						<p className='rating'>{formData.rating}</p>
+						<p className='review'>{formData.review}</p>
 					</div>
 				</div>
 				<form onSubmit={handleSubmit}>
@@ -67,13 +67,15 @@ const Product = (props) => {
 						value={formData.date}
 						onChange={handleChange}
 					/>
-					<input
-						type='text'
-						placeholder='Rating'
-						name='rating'
-						value={formData.rating}
-						onChange={handleChange}
-					/>
+                    <label for='rating'>Rating</label>
+					<select name='rating' value={formData.rating} onChange={handleChange}>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+
 					<input
 						type='text'
 						placeholder='Review'
