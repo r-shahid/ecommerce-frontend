@@ -2,7 +2,19 @@
     padding: 20px;
 }
 
-.about-member{
+.about-us .member-img {
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--purple)
+}
+
+.about-us .member-text {
+    padding-left: 20px;
+    color: var(--green);
+    font-size: 18px;
+}
+
+/* .about-member{
     display:flex;
     padding: 20px;
 }
@@ -15,4 +27,4 @@
 .member-text {
     text-align: left;
     padding-left: 20px;
-}
+} */
