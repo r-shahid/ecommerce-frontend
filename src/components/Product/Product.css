@@ -73,10 +73,11 @@ textarea {
 
 .reviews form label {
 	margin-right: 20px;
+	margin-bottom: 0px;
 }
 
 .reviews form select {
-	width: 388px;
+	width: 100%;
 }
 
 .reviews .submit {
@@ -97,9 +98,7 @@ textarea {
 
 
 @media screen and (min-width: 768px) {
-	.reviews form select {
-		width: 675px;
-	}
+	
 
 	.product-desc {
 		display: grid;
@@ -119,4 +118,8 @@ textarea {
 		font-size: 26px;
     }
     
+}
+
+@media screen and (min-width: 1020px){
+	
 }
