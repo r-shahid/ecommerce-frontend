@@ -11,7 +11,7 @@ const Product = (props) => {
 	const handleSubmit = (e) => {
 	    e.preventDefault()
         props.handleSubmit(formData)
-        props.history.push('/products:id')
+        props.history.push('/products/:id')
     }
     const handleChange = (e) => {
         console.log('handleChange', formData)
