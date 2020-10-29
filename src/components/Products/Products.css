@@ -1,4 +1,14 @@
-img {
-    height: 360;
-    width: 480;
+.all-products img {
+    /* uncommenting out the height makes the images the same height but it messes with their original ratio */
+    /* height: 200px; */
+    width: 100%;
+}
+.all-products {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) )
+}
+
+.all-products div {
+    padding: 20px;
 }
