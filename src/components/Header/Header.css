@@ -21,11 +21,12 @@ not sure whats gonna happen with the bootstrap nav bar though*/
 .header .page-links {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: var(--purple);
 }
 
 .page-links div {
-    padding: 0px 10px;
+    padding: 10px;
     background-color: var(--purple);
 }
 
@@ -39,4 +40,9 @@ not sure whats gonna happen with the bootstrap nav bar though*/
     font-family: 'Karla', sans-serif;
     font-size: 18px;
     line-height: 10px;
+}
+
+.page-links a:hover{
+    text-decoration: none;
+    color: white;
 }

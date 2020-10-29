@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Product.css';
+// import { useEffect } from 'react';
 
 const Product = (props) => {
 	console.log('product props- ', props);
-	const [formData, setFormData] = React.useState(props.review);
+	const [formData, setFormData] = useState(props.review);
+	const [product, setProduct] = useState({})
 	//something is not quite right here, the filter is showing all products
 	//not just the one that was clicked
-	const product = props.products.filter(
-		(product) => product.name === props.match.params.name
-	);
-
-	console.log('result of product filter - ', product);
+	useEffect(() => {
+		console.log("props.products", props.products)
+		const item = props.products.filter(
+			(product) => product._id === props.match.params.id
+		);
+		console.log('result of product filter - ', item);
+		setProduct(item[0])
+	}, [])
+	
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		props.handleSubmit(formData);
@@ -29,6 +35,7 @@ const Product = (props) => {
 	//I suspect it has something to do with the filter not outputting just one
 	//product or maybe I've referenced it incorrectly here
 	//I'm kind of lost
+	console.log("product", product)
 	return (
 		<div className='product'>
 			<div className='product-desc'>
