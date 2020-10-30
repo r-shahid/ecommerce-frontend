@@ -56,7 +56,7 @@ const Main = (props) => {
 	};
 	//handleUpdate to update a product when form is clicked
 	const handleUpdate = (product) => {
-		fetch(url + '/products/' + product._id, {
+		fetch(url + '/products/review/' + product._id, {
 			method: 'put',
 			headers: {
 				'Content-Type': 'application/json',
@@ -64,6 +64,16 @@ const Main = (props) => {
 			body: JSON.stringify(product),
 		}).then((response) => getProducts());
 	};
+
+	// const handleAddReview = (product) => {
+	// 	fetch(url + '/products/review/' + product._id, {
+	// 		method: 'put',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+	// 		body: JSON.stringify(product),
+	// 	}).then((response) => getProducts());
+	// };
 
 	const selectProduct = (product) => {
 		setSelectedProduct(product)

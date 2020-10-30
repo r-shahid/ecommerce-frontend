@@ -20,6 +20,7 @@ const Product = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		props.handleSubmit(formData);
+		setFormData({ ...formData, [e.target.name]: e.target.value });
 		//have to figure out how to update this url to reflect the actual id
 		//of the selected item to post the review - this handleSubmit is for the
 		//review form submit
@@ -29,7 +30,7 @@ const Product = (props) => {
 
 	const handleChange = (e) => {
 		console.log('handleChange', formData);
-		// e.preventDefault();
+		e.preventDefault();
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 		console.log("setformdata", formData)
 	};
@@ -52,6 +53,7 @@ const Product = (props) => {
 	let reviews = product.reviews
 	console.log('product.reviews', reviews)
 	
+
 	return (
 		<div className='product'>
 			<div>
@@ -82,18 +84,15 @@ const Product = (props) => {
 			<div className='reviews'>
 				<div>
 					<h2>REVIEWS</h2>
-						 <div className='each-review'>
+						 {/* <div className='each-review'>
 						 	<p className='name'>{formData.name}</p>
 						 	<p className='date'>{formData.date}</p>
 						 	<p className='rating'>{formData.rating}</p>
 						 	<p className='review'>{formData.review}</p>
-						 </div>
+						 </div> */}
 				</div>
                 <h4>Write a Review</h4>
-				<form onClick={() => {
-					props.selectProduct(product)
-					props.history.push('/products/:id')
-				}}
+				<form 
 				onSubmit={handleSubmit}>
 					<input
 						type='text'
@@ -112,7 +111,9 @@ const Product = (props) => {
 					/>
 					<br />
 					<label for='rating'>Rating:</label>
-					<select name='rating' value={formData.rating} onChange={handleChange}>
+					<select name='rating' value={formData.rating} 
+					onChange={handleChange}
+					>
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
