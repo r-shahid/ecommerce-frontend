@@ -1,22 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './Product.css';
 // import { useEffect } from 'react';
 
 const Product = (props) => {
 	console.log('product props- ', props);
 	const [formData, setFormData] = useState(props.selectedProduct);
-	const [product, setProduct] = useState({})
+	const [product, setProduct] = useState({});
 	//something is not quite right here, the filter is showing all products
 	//not just the one that was clicked
 	useEffect(() => {
-		console.log("props.products", props.products)
+		console.log('props.products', props.products);
 		const item = props.products.filter(
 			(product) => product._id === props.match.params.id
 		);
 		console.log('result of product filter - ', item);
-		setProduct(item[0])
-	}, [])
-	
+		setProduct(item[0]);
+	}, []);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		props.handleSubmit(formData);
@@ -31,7 +31,7 @@ const Product = (props) => {
 		console.log('handleChange', formData);
 		// e.preventDefault();
 		setFormData({ ...formData, [e.target.name]: e.target.value });
-		console.log("setformdata", formData)
+		console.log('setformdata', formData);
 	};
 
 	// // useEffect(() => {
@@ -48,10 +48,10 @@ const Product = (props) => {
 	//I suspect it has something to do with the filter not outputting just one
 	//product or maybe I've referenced it incorrectly here
 	//I'm kind of lost
-	console.log("product", product)
-	let reviews = product.reviews
-	console.log('product.reviews', reviews)
-	
+	console.log('product', product);
+	let reviews = product.reviews;
+	console.log('product.reviews', reviews);
+
 	return (
 		<div className='product'>
 			<div>
@@ -61,40 +61,41 @@ const Product = (props) => {
 				<h3>{product.product}</h3>
 				<h4>{product.price}</h4>
 				<p>{product.productDescription}</p>
-				<div>
-					{reviews && reviews.map((ele, ind) => {
-						return (
-							<div>
-								<p>Name: {reviews[ind].name}</p>
-								<p>{reviews[ind].date}</p>
-								<p>{reviews[ind].rating}</p>
-								<p>Review: {reviews[ind].Reviews}</p>
-							</div>
-						
-						)
-					})}
-				</div>
 				{/* this button will need a Link or a handler to pass item to cart */}
 				<button>Add to Cart</button>
 			</div>
-			
+
 			<hr />
 			<div className='reviews'>
 				<div>
 					<h2>REVIEWS</h2>
-						 <div className='each-review'>
-						 	<p className='name'>{formData.name}</p>
-						 	<p className='date'>{formData.date}</p>
-						 	<p className='rating'>{formData.rating}</p>
-						 	<p className='review'>{formData.review}</p>
-						 </div>
+					<div>
+						{reviews &&
+							reviews.map((ele, ind) => {
+								return (
+									<div className='db-review'>
+										<p className='name'> {reviews[ind].name}</p>
+										<p className='date'>{reviews[ind].date}</p>
+										<p className='rating'>{reviews[ind].rating} out of 5</p>
+										<p className='review-text'>  {reviews[ind].Reviews}</p>
+									</div>
+								);
+							})}
+					</div>
+					<div className='each-review'>
+						<p className='name'>{formData.name}</p>
+						<p className='date'>{formData.date}</p>
+						<p className='rating'>{formData.rating}</p>
+						<p className='review'>{formData.review}</p>
+					</div>
 				</div>
-                <h4>Write a Review</h4>
-				<form onClick={() => {
-					props.selectProduct(product)
-					props.history.push('/products/:id')
-				}}
-				onSubmit={handleSubmit}>
+				<h4>Write a Review</h4>
+				<form
+					onClick={() => {
+						props.selectProduct(product);
+						props.history.push('/products/:id');
+					}}
+					onSubmit={handleSubmit}>
 					<input
 						type='text'
 						placeholder='Name'
@@ -121,7 +122,7 @@ const Product = (props) => {
 					</select>
 					<br />
 					<textarea
-                        rows='5'
+						rows='5'
 						type='text'
 						placeholder='Review'
 						name='review'
