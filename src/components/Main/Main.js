@@ -35,6 +35,7 @@ const Main = (props) => {
 		rating: null,
 		review: '',
 	};
+	const [selectedProduct, setSelectedProduct] = useState(emptyReview)
 	const emptyProduct = {
 		product: '',
 		img: '',
@@ -64,6 +65,10 @@ const Main = (props) => {
 		}).then((response) => getProducts());
 	};
 
+	const selectProduct = (product) => {
+		setSelectedProduct(product)
+	}
+
 	return (
 		<main>
 			<Switch>
@@ -75,7 +80,9 @@ const Main = (props) => {
 				<Route
 					path='/products/:id'
 					render={(rp) => (
-						<Product {...rp} handleSubmit={handleUpdate} products={products} review={emptyReview} />
+						<Product {...rp} selectProduct={selectProduct} selectedProduct={selectedProduct} handleSubmit={handleUpdate} products={products} 
+						//review={emptyReview} 
+						/>
 					)}
 				/>
 				<Route
@@ -88,7 +95,9 @@ const Main = (props) => {
 						/>
 					)}
 				/>
-				<Route path='/cart'>
+				<Route 
+					path='/cart'>
+					
 					<Cart />
 				</Route>
 				<Route path='/about'>
