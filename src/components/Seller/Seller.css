@@ -1,3 +1,7 @@
+.sidebar{
+    display: none
+}
+
 .seller{
     font-family: 'Karla', sans-serif;
 }
@@ -69,6 +73,9 @@
     .form-and-sidebar {
         display: grid;
         grid-template-columns: 2fr 1fr;
+    }
+    .sidebar {
+        display: block;
     }
     .form-and-sidebar .sidebar img {
         width: 300px;
