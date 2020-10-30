@@ -54,17 +54,18 @@ const Product = (props) => {
 
 	return (
 		<div className='product'>
+			<div className='product-desc'>
 			<div>
 				<img src={product.img} alt='#' />
 			</div>
 			<div className='product-info'>
 				<h3>{product.product}</h3>
-				<h4>{product.price}</h4>
+				<h4>${product.price}</h4>
 				<p>{product.productDescription}</p>
 				{/* this button will need a Link or a handler to pass item to cart */}
 				<button>Add to Cart</button>
 			</div>
-
+			</div>
 			<hr />
 			<div className='reviews'>
 				<div>
