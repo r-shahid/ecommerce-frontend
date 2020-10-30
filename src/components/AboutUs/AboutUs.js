@@ -15,7 +15,6 @@ const AboutUs = () => {
 						<p>
 							<b>
 								Frontend - React component main technician - React architect
-								designer - Styling of web app
 							</b>
 							<br /> I am a Full Stack Developer living in the beautiful
 							Shenandoah Valley in central Virginia with my two Akitas. I thrive
