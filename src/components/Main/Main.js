@@ -6,6 +6,7 @@ import Seller from '../Seller/Seller';
 import AboutUs from '../AboutUs/AboutUs';
 import Cart from '../Cart/Cart';
 import { Switch, Route } from 'react-router-dom';
+import axios from 'axios'
 
 //need a route to display one product by id
 
@@ -43,6 +44,9 @@ const Main = (props) => {
 		productDescription: '',
 		review: [{ emptyReview }],
 	};
+	//const [inCart, setInCart] = useState('')
+	const [cart, setCart] = useState([])
+
 	const handleCreate = (newProduct) => {
 		fetch(url + '/products/', {
 			method: 'post',
@@ -56,14 +60,32 @@ const Main = (props) => {
 	};
 	//handleUpdate to update a product when form is clicked
 	const handleUpdate = (product) => {
-		fetch(url + '/products/' + product._id, {
-			method: 'put',
+		fetch(url + '/products/review/' + product._id, {
+			method: 'post',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(product),
 		}).then((response) => getProducts());
 	};
+	const toggleCart = (product) => {
+		axios({
+            url: `${url}/products/${product._id}`,
+            method: "PUT",
+            data: { cart: true },
+		  })
+		}
+
+		
+	// const handleAddReview = (product) => {
+	// 	fetch(url + '/products/review/' + product._id, {
+	// 		method: 'put',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 		},
+	// 		body: JSON.stringify(product),
+	// 	}).then((response) => getProducts());
+	// };
 
 	const selectProduct = (product) => {
 		setSelectedProduct(product)
@@ -80,7 +102,10 @@ const Main = (props) => {
 				<Route
 					path='/products/:id'
 					render={(rp) => (
-						<Product {...rp} selectProduct={selectProduct} selectedProduct={selectedProduct} handleSubmit={handleUpdate} products={products} 
+						<Product {...rp} selectProduct={selectProduct} selectedProduct={selectedProduct} 
+						handleSubmit={handleUpdate}
+						toggleCart={toggleCart}
+						 products={products} 
 						//review={emptyReview} 
 						/>
 					)}

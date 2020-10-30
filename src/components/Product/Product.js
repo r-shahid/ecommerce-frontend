@@ -20,20 +20,22 @@ const Product = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		props.handleSubmit(formData);
+		setFormData({ ...formData, [e.target.name]: e.target.value });
 		//have to figure out how to update this url to reflect the actual id
 		//of the selected item to post the review - this handleSubmit is for the
 		//review form submit
 		//also should this update the item in the database?
-		props.history.push('/products/:id');
+		props.history.push(`/products/review/${product._id}`);
 	};
 
 	const handleChange = (e) => {
 		console.log('handleChange', formData);
-		// e.preventDefault();
+		e.preventDefault();
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 		console.log('setformdata', formData);
 	};
-
+	const toggleCart = props.toggleCart
+	console.log(toggleCart)
 	// // useEffect(() => {
 	// 	console.log("props.products", props.products)
 	// 	const review = props.products.map(
@@ -63,7 +65,7 @@ const Product = (props) => {
 				<h4>${product.price}</h4>
 				<p>{product.productDescription}</p>
 				{/* this button will need a Link or a handler to pass item to cart */}
-				<button>Add to Cart</button>
+				<button onClick={toggleCart}>Add to Cart</button>
 			</div>
 			</div>
 			<hr />
@@ -83,12 +85,12 @@ const Product = (props) => {
 								);
 							})}
 					</div>
-					<div className='each-review'>
+					{/* <div className='each-review'>
 						<p className='name'>{formData.name}</p>
 						<p className='date'>{formData.date}</p>
 						<p className='rating'>{formData.rating}</p>
 						<p className='review'>{formData.review}</p>
-					</div>
+					</div> */}
 				</div>
 				<h4>Write a Review</h4>
 				<form
@@ -114,7 +116,9 @@ const Product = (props) => {
 					/>
 					<br />
 					<label for='rating'>Rating:</label>
-					<select name='rating' value={formData.rating} onChange={handleChange}>
+					<select name='rating' value={formData.rating} 
+					onChange={handleChange}
+					>
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
