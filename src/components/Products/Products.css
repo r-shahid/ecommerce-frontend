@@ -17,5 +17,16 @@
 .all-products a {
     text-decoration: none;
     font-size: 18px;
+    color: black;
 }
 
+.all-products a:hover {
+    text-decoration: none;
+    color: var(--green)
+}
+
+@media screen and (min-width: 1020px){
+    .all-products {
+        grid-template-columns: repeat(4, 1fr);
+}
+}
