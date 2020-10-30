@@ -4,7 +4,13 @@ import './Product.css';
 
 const Product = (props) => {
 	console.log('product props- ', props);
-	const [formData, setFormData] = useState(props.selectedProduct);
+	const [formData, setFormData] = useState({
+		name: '',
+		date: '',
+		rating: null,
+		Reviews: '',
+		productid: ''
+	});
 	const [product, setProduct] = useState({});
 	//something is not quite right here, the filter is showing all products
 	//not just the one that was clicked
@@ -15,17 +21,21 @@ const Product = (props) => {
 		);
 		console.log('result of product filter - ', item);
 		setProduct(item[0]);
-	}, []);
+		setFormData({...formData, productid:item[0]._id})
+	}, [props.products]);
+
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		// formData._id = product._id
 		props.handleSubmit(formData);
-		setFormData({ ...formData, [e.target.name]: e.target.value });
+		// setFormData({ ...formData, [e.target.name]: e.target.value });
 		//have to figure out how to update this url to reflect the actual id
 		//of the selected item to post the review - this handleSubmit is for the
 		//review form submit
 		//also should this update the item in the database?
-		props.history.push(`/products/review/${product._id}`);
+		console.log("product id", product._id)
+		props.history.push(`/products/${product._id}`);
 	};
 
 	const handleChange = (e) => {
@@ -94,10 +104,10 @@ const Product = (props) => {
 				</div>
 				<h4>Write a Review</h4>
 				<form
-					onClick={() => {
-						props.selectProduct(product);
-						props.history.push('/products/:id');
-					}}
+					// onClick={() => {
+					// 	props.selectProduct(product);
+					// 	props.history.push('/products/:id');
+					// }}
 					onSubmit={handleSubmit}>
 					<input
 						type='text'
@@ -130,7 +140,7 @@ const Product = (props) => {
 						rows='5'
 						type='text'
 						placeholder='Review'
-						name='review'
+						name='Reviews'
 						value={formData.review}
 						onChange={handleChange}
 					/>

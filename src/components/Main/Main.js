@@ -13,8 +13,10 @@ import axios from 'axios'
 const Main = (props) => {
 	//url variable
 	const url = 'https://impulse-p3.herokuapp.com';
+	// const url = 'http://localhost:3000';
 	//state to hold products
 	const [products, setProducts] = useState([]);
+	const [toggle, setToggle] = useState(false)
 	//function to fetch all products
 	const getProducts = () => {
 		fetch(url + '/products/')
@@ -28,7 +30,7 @@ const Main = (props) => {
 	//get products on page load, without creating an infinite loop
 	React.useEffect(() => {
 		getProducts();
-	}, []);
+	}, [toggle]);
 
 	const emptyReview = {
 		name: '',
@@ -60,13 +62,20 @@ const Main = (props) => {
 	};
 	//handleUpdate to update a product when form is clicked
 	const handleUpdate = (product) => {
-		fetch(url + '/products/review/' + product._id, {
+		console.log('product', product)
+		const test = url + '/products/review/' + product.productid;
+		console.log("Test", test)
+		fetch(url + '/products/review/' + product.productid, {
 			method: 'post',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(product),
-		}).then((response) => getProducts());
+		}).then((response) => {
+			console.log('response', response.json());
+			// getProducts();
+			setToggle(!toggle)
+		});
 	};
 	const toggleCart = (product) => {
 		axios({
