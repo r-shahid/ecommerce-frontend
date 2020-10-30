@@ -49,6 +49,9 @@ const Product = (props) => {
 	//product or maybe I've referenced it incorrectly here
 	//I'm kind of lost
 	console.log("product", product)
+	let reviews = product.reviews
+	console.log('product.reviews', reviews)
+	
 	return (
 		<div className='product'>
 			<div>
@@ -58,7 +61,19 @@ const Product = (props) => {
 				<h3>{product.product}</h3>
 				<h4>{product.price}</h4>
 				<p>{product.productDescription}</p>
-				{/* <p>{product.reviews}</p> */}
+				<div>
+					{reviews && reviews.map((ele, ind) => {
+						return (
+							<div>
+								<p>Name: {reviews[ind].name}</p>
+								<p>{reviews[ind].date}</p>
+								<p>{reviews[ind].rating}</p>
+								<p>Review: {reviews[ind].Reviews}</p>
+							</div>
+						
+						)
+					})}
+				</div>
 				{/* this button will need a Link or a handler to pass item to cart */}
 				<button>Add to Cart</button>
 			</div>
@@ -66,23 +81,12 @@ const Product = (props) => {
 			<div className='reviews'>
 				<div>
 					<h2>REVIEWS</h2>
-					{props.products.map((ele, ind) => (
-						console.log("ele", ele.reviews),
-						<>
-						{ele.reviews.filter(
-							(product) => product._id === props.match.params.id
-						),
-						console.log("products", product.reviews)
-						}
-							<p>{product.toString()}</p>
-						</>
-						// <div className='each-review'>
-						// 	<p className='name'>{formData.name}</p>
-						// 	<p className='date'>{formData.date}</p>
-						// 	<p className='rating'>{formData.rating}</p>
-						// 	<p className='review'>{formData.review}</p>
-						// </div>
-					))}
+						 <div className='each-review'>
+						 	<p className='name'>{formData.name}</p>
+						 	<p className='date'>{formData.date}</p>
+						 	<p className='rating'>{formData.rating}</p>
+						 	<p className='review'>{formData.review}</p>
+						 </div>
 				</div>
                 <h4>Write a Review</h4>
 				<form onClick={() => {
