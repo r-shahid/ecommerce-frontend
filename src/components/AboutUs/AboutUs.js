@@ -1,65 +1,45 @@
 import React from 'react'
 import './AboutUs.css'
-import placeholder from '../images/placeholder.jpg'
+import TM from '../images/TM.png'
+import EG from '../images/EG.png'
+import RS from '../images/RS.png';
+import ZY from '../images/ZY.png';
 
 const AboutUs = () => {
     return (
 			<div className='about-us'>
 				<h1>Who We Are</h1>
 				<div className='about-member'>
-					<img className='member-img' src={placeholder} alt='member' />
+					<img className='member-img' src={TM} alt='member' />
 					<div className='member-text'>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Frontend - React component main technician - React architect
+							designer - Styling of web app
 						</p>
 					</div>
 				</div>
 				<div className='about-member'>
-					<img className='member-img' src={placeholder} alt='member' />
+					<img className='member-img' src={EG} alt='member' />
 					<div className='member-text'>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Backend - Server side - connecting with Postman/Mongo and API -
+							Assistant with React components - React architect designer
 						</p>
 					</div>
 				</div>
 				<div className='about-member'>
-					<img className='member-img' src={placeholder} alt='member' />
+					<img className='member-img' src={RS} alt='member' />
 					<div className='member-text'>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Product Lead / Product Manager - Pull and commit approvals - Front
+							end - React component technician - Styling of web app
 						</p>
 					</div>
 				</div>
 				<div className='about-member'>
-					<img className='member-img' src={placeholder} alt='member' />
+					<img className='member-img' src={ZY} alt='member' />
 					<div className='member-text'>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
+						<p>Setup and foundation - Web App planner</p>
 					</div>
 				</div>
 			</div>
