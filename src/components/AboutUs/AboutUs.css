@@ -5,7 +5,7 @@
 .about-us .member-img {
 	width: 200px;
 	border-radius: 50%;
-	border: 5px solid var(--purple);
+	border: 5px solid #D10081;
 }
 
 .about-us .member-text {

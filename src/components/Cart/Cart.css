@@ -7,7 +7,7 @@
 .cart-content .product-info {
 	text-align: right;
 	padding: 0 0 0 100px;
-	background-color: pink;
+	/* background-color: pink; */
 }
 
 .cart-content .product-info p {
@@ -22,7 +22,7 @@
 .cart-content .each-product {
 	display: flex;
 	justify-content: space-between;
-	background-color: green;
+	/* background-color: green; */
 	margin: 20px 0;
 }
 
